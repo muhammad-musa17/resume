@@ -1,97 +1,372 @@
-/*
-Error: Undefined variable: "$dip".
-        on line 234 of scss/_home.scss
-        from line 54 of scss/style.scss
+.nice-select {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #e0e7ee;
+  box-sizing: border-box;
+  clear: both;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  height: 42px;
+  line-height: 40px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  width: auto; }
+  .nice-select:hover {
+    border-color: #d0dae5; }
+  .nice-select:active, .nice-select.open, .nice-select:focus {
+    border-color: #88bfff; }
+  .nice-select:after {
+    border-bottom: 2px solid #90a1b5;
+    border-right: 2px solid #90a1b5;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+        -ms-transform-origin: 66% 66%;
+            transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    width: 5px; }
+  .nice-select.open:after {
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  .nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+        -ms-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0); }
+  .nice-select.disabled {
+    border-color: #e7ecf2;
+    color: #90a1b5;
+    pointer-events: none; }
+    .nice-select.disabled:after {
+      border-color: #cdd5de; }
+  .nice-select.wide {
+    width: 100%; }
+    .nice-select.wide .list {
+      left: 0 !important;
+      right: 0 !important; }
+  .nice-select.right {
+    float: right; }
+    .nice-select.right .list {
+      left: auto;
+      right: 0; }
+  .nice-select.small {
+    font-size: 12px;
+    height: 36px;
+    line-height: 34px; }
+    .nice-select.small:after {
+      height: 4px;
+      width: 4px; }
+    .nice-select.small .option {
+      line-height: 34px;
+      min-height: 34px; }
+  .nice-select .list {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgba(68, 88, 112, 0.11);
+    box-sizing: border-box;
+    margin-top: 4px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -webkit-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    -webkit-transform: scale(0.75) translateY(-21px);
+        -ms-transform: scale(0.75) translateY(-21px);
+            transform: scale(0.75) translateY(-21px);
+    -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    z-index: 9; }
+    .nice-select .list:hover .option:not(:hover) {
+      background-color: transparent !important; }
+  .nice-select .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    list-style: none;
+    min-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s; }
+    .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+      background-color: #f6f7f9; }
+    .nice-select .option.selected {
+      font-weight: bold; }
+    .nice-select .option.disabled {
+      background-color: transparent;
+      color: #90a1b5;
+      cursor: default; }
 
-Backtrace:
-scss/_home.scss:234
-scss/style.scss:54
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `block in with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:135:in `with_frame'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `map'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `block in with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:135:in `with_frame'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `map'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `block in with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:135:in `with_frame'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `map'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `block in with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:135:in `with_frame'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:325:in `map'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:88:in `block in with_import'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:135:in `with_frame'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:88:in `with_import'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `block in with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:135:in `with_frame'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `with_base'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:320:in `block in watch'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-C:/Devkit/Ruby23/lib/ruby/gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
+.no-csspointerevents .nice-select .list {
+  display: none; }
+
+.no-csspointerevents .nice-select.open .list {
+  display: block; }
+
+code[class*="language-"],
+pre[class*="language-"] {
+  border-radius: 2px;
+  color: #445870;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  text-align: left;
   white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$dip\".\A         on line 234 of scss/_home.scss\A         from line 54 of scss/style.scss"; }
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  direction: ltr;
+  font-family: Inconsolata, monospace;
+  font-size: 13px;
+  letter-spacing: 0; }
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 18px 24px;
+  margin: 0 0 24px;
+  overflow: auto; }
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f6f7f9; }
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0 2px 1px; }
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #90a1b5; }
+
+.token.punctuation {
+  color: #999; }
+
+.namespace {
+  opacity: .7; }
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #EC4444; }
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #4ABF60; }
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5); }
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #55a1fb; }
+
+.token.function {
+  color: #DD4A68; }
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90; }
+
+.token.important,
+.token.bold {
+  font-weight: bold; }
+
+.token.italic {
+  font-style: italic; }
+
+.token.entity {
+  cursor: help; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #445870;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: -0.25px;
+  margin: 0;
+  padding: 0 18px; }
+
+p {
+  line-height: 1.6;
+  margin: 0 0 1.6em; }
+
+h1 {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  margin: 0 0 24px; }
+
+h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0 0 12px;
+  padding-top: 48px; }
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 12px;
+  padding-top: 12px; }
+
+ul {
+  margin: 0;
+  padding-left: 16px; }
+
+a:not(.button) {
+  color: #55a1fb;
+  outline: none;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid transparent; }
+  a:not(.button):hover, a:not(.button):focus {
+    border-bottom: 1px solid #88bfff; }
+
+::-moz-selection {
+  background: #f3f4f7; }
+
+::selection {
+  background: #f3f4f7; }
+
+.container {
+  margin: 96px auto 60px;
+  max-width: 40em; }
+
+.box {
+  background-color: #f6f7f9;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  padding: 24px 30px; }
+  .box:before, .box:after {
+    content: "";
+    display: table; }
+  .box:after {
+    clear: both; }
+
+label {
+  color: #90a1b5;
+  font-size: 11px;
+  margin: 0 2px 4px;
+  text-transform: uppercase;
+  float: left; }
+  label.right {
+    float: right; }
+
+.button {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #55a1fb;
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  height: 42px;
+  line-height: 42px;
+  outline: none;
+  padding: 0 24px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  width: auto; }
+  .button:hover, .button:focus {
+    background-color: #4196fb; }
+  .button:active, .button.nice-select.open {
+    background-color: #2d8bfa; }
+  .button.light {
+    background-color: #fff;
+    border: 1px solid #e0e7ee;
+    color: #55a1fb;
+    line-height: 40px;
+    margin-left: 24px; }
+    .button.light:hover {
+      border-color: #d0dae5; }
+    .button.light:active, .button.light.nice-select.open, .button.light:focus {
+      border-color: #88bfff; }
+  @media screen and (max-width: 360px) {
+    .button {
+      width: 100%; }
+      .button.light {
+        margin: 18px 0 0; } }
+
+.header {
+  text-align: center;
+  margin-bottom: 60px; }
+  @media screen and (min-width: 600px) {
+    .header {
+      padding: 0 18px; } }
+  .header p {
+    color: #90a1b5;
+    font-size: 18px;
+    margin-bottom: 36px; }
+
+.footer {
+  text-align: center; }
+  .footer p {
+    margin-bottom: 90px; }
+
+.credit {
+  color: #90a1b5;
+  clear: both;
+  font-size: 12px;
+  margin-top: 90px; }
